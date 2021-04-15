@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>login</title>
+</head>
+<body>
+
+
+ <div>
+<div class=" row" ">
+ <div class="col-6" >
+    {%if pName%}
+    <div>
+   <p  class="form-control col-12">
+    name shoma dar bazi:{{pName}}
+   </p>
+   <br>
+   <p  class="form-control col-12">
+   level shoma:{{pLevel}}
+   </p>
+   <br>
+   <p  class="form-control col-12">
+   pool shoma:{{pCash}}
+   </p>
+    </div>
+ </div>
+ <div class="col-6">
+
+    <form method="GET">
+    <button type="submit" class="btn btn-danger">logout </button>
+    </form>
+ </div>
+
+ <br>
+</div>
+    {%else%}
+        <form method="POST" class="form-control form">
+        {% csrf_token %}
+
+<label >useername</label>
+        <input type="text" name="username" class="form-control col-4">
+        <br>
+        <label >password</label>
+        <input type="password" name="password"  class="form-control col-4">
+        <br>
+        <button class= "btn btn-success" type="submit"> login</button>
+
+    </form>
+    {%endif%}
+ </div>
+    
+</body>
+</html>
